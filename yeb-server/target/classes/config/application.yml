@@ -1,0 +1,59 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/yeb?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    hikari:
+      pool-name: DateHikariCP
+      minimum-idle: 5
+      idle-timeout: 180000
+      maximum-pool-size: 10
+      auto-commit: true
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+
+
+
+redis:
+  timeout: 10000ms
+  host: 127.0.0.1
+  port: 6379
+  database: 0
+lettuce:
+  pool:
+    max-active: 1024
+    max-wait: 10000ms
+    max-idle: 200
+    min-idle: 5
+
+rabbitmq:
+  username: guest
+  password: guest
+  host: 127.0.0.1
+  port: 5672
+  publisher-confirm-type: correlated
+  publisher-returns: true
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+  type-aliases-package: com.xxxx.server.pojo
+  configuration:
+    map-underscore-to-camel-case: false
+
+
+
+
+
+jwt:
+  #存储请求头
+  tokenHeader: Authorization
+  #加解密使用的密钥
+  secret: yeb-secret
+
+  expiration: 604800
+  #JWT 负载中拿到开头
+  tokenHead: Bearer
