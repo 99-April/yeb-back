@@ -6,20 +6,19 @@ spring:
     host: smtp.163.com
     protocol: smtp
     default-encoding: utf-8
-    password: YXKJMKCKSDRNJZRA
+    password: IJCMSGBGCJMLKZTF
     username: panxiaoyu1999@163.com
     port: 25
 
-rabbitmq:
-  username: guest
-  password: guest
-  host: 127.0.0.1
-  port: 5672
-  listener:
-    simple:
-      #开启手动确认
-      acknowledge_mode: manual
-
+  rabbitmq:
+    username: guest
+    password: guest
+    host: 127.0.0.1
+    port: 5672
+    listener:
+      simple:
+        #开启手动确认
+        acknowledge_mode: manual
   redis:
     timeout: 10000ms
     host: 127.0.0.1
