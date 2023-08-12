@@ -26,8 +26,14 @@ spring:
     password: guest
     host: 127.0.0.1
     port: 5672
+    # 消息确认回调
     publisher-confirm-type: correlated
+    # 消息失败回调
     publisher-returns: true
+    listener:
+      simple:
+        #开启手动确认
+        acknowledge_mode: manual
 
 mybatis-plus:
   mapper-locations: classpath*:/mapper/*Mapper.xml
