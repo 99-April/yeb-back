@@ -15,38 +15,25 @@ spring:
       max-lifetime: 1800000
       connection-timeout: 30000
       connection-test-query: SELECT 1
-
-
-
-redis:
-  timeout: 10000ms
-  host: 127.0.0.1
-  port: 6379
-  database: 0
-lettuce:
-  pool:
-    max-active: 1024
-    max-wait: 10000ms
-    max-idle: 200
-    min-idle: 5
-
-rabbitmq:
-  username: guest
-  password: guest
-  host: 127.0.0.1
-  port: 5672
-  publisher-confirm-type: correlated
-  publisher-returns: true
+  redis:
+    timeout: 10000ms
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    
+  rabbitmq:
+    username: guest
+    password: guest
+    host: 127.0.0.1
+    port: 5672
+    publisher-confirm-type: correlated
+    publisher-returns: true
 
 mybatis-plus:
   mapper-locations: classpath*:/mapper/*Mapper.xml
   type-aliases-package: com.xxxx.server.pojo
   configuration:
     map-underscore-to-camel-case: false
-
-
-
-
 
 jwt:
   #存储请求头
